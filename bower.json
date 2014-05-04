@@ -1,0 +1,8 @@
+{
+  "name": "buccal",
+  "private": true,
+  "dependencies": {
+  	"framework7": "git://github.com/nolimits4web/Framework7.git"
+  },
+  "devDependencies": {}
+}
