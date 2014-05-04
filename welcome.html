@@ -1,28 +1,28 @@
-		<section class="welcome">
-		  <div class="dialog demo-dialog">
-		    <form class="form-inline">
-		      <div class="form-group">
-						<label class="sr-only" for="dialogExampleInputEmail1">Login/E-mail</label>
-						<input type="email" class="form-control flat" id="dialogExampleInputEmail1" placeholder="Login/E-mail">
-					</div>
-		      <div class="form-group">
-						<label class="sr-only" for="dialogExampleInputPass1">Login/E-mail</label>
-						<input type="password" class="form-control flat" id="dialogExampleInputPass1" placeholder="Password">
-						<span class="input-icon fui-question"></span>
-					</div>
-		      <button class="btn btn-primary btn-wide" id="login" >Login</button>
-		      <button class="btn btn-danger btn-wide" id="register" >Register</button>
-		    </form>
-		  </div> <!-- /dialog -->
-		</section>
+<section class="welcome">
+  <div class="dialog demo-dialog">
+    <form class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="dialogExampleInputEmail1">Login</label>
+        <input type="email" class="form-control flat" id="dialogExampleInputEmail1" placeholder="Login/E-mail">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="dialogExampleInputPass1">Login/E-mail</label>
+        <input type="password" class="form-control flat" id="dialogExampleInputPass1" placeholder="Password">
+        <span class="input-icon fui-question"></span>
+      </div>
+      <a class="btn btn-primary btn-wide" id="login" >Login</a>
+      <a class="btn btn-danger btn-wide" id="register" >Register</a>
+    </form>
+  </div> <!-- /dialog -->
+</section>
 
-		<script>
-        	("#login").click(function () {
-                $(".container").html("").load("nav-foot.html")
-                });
-            
-            $("#register").click(function () {
-                $("container").html("").load("nav-foot.html")
-                });
-
-    	</script>
+<script>
+var SERVER_URL = 'http://buccal.buzz/'
+$(function(){
+    $("#login, #register").click(function(){
+      $(".container").html("")
+        .load("nav-foot.html")
+        .load("chats.html");
+    });
+});
+</script>

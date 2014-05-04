@@ -18,13 +18,6 @@ String.prototype.repeat = function(num) {
     if (!url) { $elem.html("").load(url); }
   });
 
-  $(function(){
-    $('div.container')
-      .html("")
-      .load('nav-foot.html')
-      .load('welcome.html');
-  });
-
   // Add segments to a slider
   $.fn.addSliderSegments = function (amount, orientation) {    
     return this.each(function () {
