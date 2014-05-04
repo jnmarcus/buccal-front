@@ -1,3 +1,8 @@
+section.welcome {
+  background-color: #edeff1;
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
 footer {
   height: 60px;
 }
@@ -5,6 +10,9 @@ footer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.center {
+  margin: 0 auto;
 }
 .footer-fixed {
   position: fixed;
@@ -16,4 +24,7 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 1000;
+}
+.dialog {
+  border-top: none;
 }
