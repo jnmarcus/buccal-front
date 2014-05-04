@@ -6,6 +6,18 @@ String.prototype.repeat = function(num) {
 
 (function($) {
 
+  $('a[data-uri]').on('click', function() {
+    var $a = $(this),
+        url = $a.attr('data-uri'),
+        field = $a.attr('data-view');
+
+    if (!field) { field = 'div.container'; }
+
+    var $elem = $(field);
+
+    if (!url) { $elem.html("").load(url); }
+  });
+
   // Add segments to a slider
   $.fn.addSliderSegments = function (amount, orientation) {    
     return this.each(function () {
