@@ -10,8 +10,19 @@
 						<input type="password" class="form-control flat" id="dialogExampleInputPass1" placeholder="Password">
 						<span class="input-icon fui-question"></span>
 					</div>
-		      <button class="btn btn-primary btn-wide">Login</button>
-		      <button class="btn btn-danger btn-wide">Register</button>
+		      <button class="btn btn-primary btn-wide" id="login" >Login</button>
+		      <button class="btn btn-danger btn-wide" id="register" >Register</button>
 		    </form>
 		  </div> <!-- /dialog -->
 		</section>
+
+		<script>
+        	("#login").click(function () {
+                $(".container").html("").load("nav-foot.html")
+                });
+            
+            $("#register").click(function () {
+                $("container").html("").load("nav-foot.html")
+                });
+
+    	</script>
