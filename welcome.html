@@ -20,7 +20,8 @@
 var SERVER_URL = 'http://buccal.buzz/'
 $(function(){
     $("#login, #register").click(function(){
-      $(".container").html("")
+      $("nav, footer").fadeIn();
+      $("#theContainer").html("")
         .load("nav-foot.html")
         .load("chats.html");
     });

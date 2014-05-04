@@ -11,17 +11,19 @@ String.prototype.repeat = function(num) {
         url = $a.attr('data-uri'),
         field = $a.attr('data-view');
 
-    if (!field) { field = 'div.container'; }
+    if (!field) { field = '#theContainer'; }
 
     var $elem = $(field);
 
-    if (!url) { $elem.html("").load(url); }
+    if (!url) { $elem.html('').load(url); }
   });
+
+  $('#theContainer').html('').load('welcome.html');
 
   // Add segments to a slider
   $.fn.addSliderSegments = function (amount, orientation) {    
     return this.each(function () {
-      if (orientation == "vertical") {
+      if (orientation === "vertical") {
         var output = ''
           , i;
         for (i = 1; i <= amount - 2; i++) {
