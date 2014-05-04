@@ -1,13 +1,14 @@
 <section class="welcome">
   <div class="dialog demo-dialog">
+    <img class="logo" src="/logo.svg">
     <form class="form-inline">
       <div class="form-group">
-        <label class="sr-only" for="dialogExampleInputEmail1">Login</label>
-        <input type="email" class="form-control flat" id="dialogExampleInputEmail1" placeholder="Login/E-mail">
+        <label class="sr-only" for="dialogExampleInputEmail1">Display Name</label>
+        <input type="email" class="form-control flat" id="dialogExampleInputEmail1" placeholder="Display Name">
       </div>
       <div class="form-group">
-        <label class="sr-only" for="dialogExampleInputPass1">Login/E-mail</label>
-        <input type="password" class="form-control flat" id="dialogExampleInputPass1" placeholder="Password">
+        <label class="sr-only" for="dialogExampleInputPass1">Passphrase</label>
+        <input type="password" class="form-control flat" id="dialogExampleInputPass1" placeholder="Passphrase">
         <span class="input-icon fui-question"></span>
       </div>
       <a class="btn btn-primary btn-wide" id="login" >Login</a>
@@ -22,8 +23,11 @@ $(function(){
     $("#login, #register").click(function(){
       $("nav, footer").show();
       $("#theContainer").html("")
+        .hide()
         .load("nav-foot.html")
-        .load("chats.html");
+        .load("conversations.html")
+        .fadeIn();
+      setTimeout(function(){window.attachLinks();},300);
     });
 });
 </script>

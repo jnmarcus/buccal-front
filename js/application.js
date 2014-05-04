@@ -6,34 +6,39 @@ String.prototype.repeat = function(num) {
 
 (function($) {
 
-  $('a[data-uri]').on('click', function() {
-    var $a = $(this),
-        url = $a.attr('data-uri'),
-        field = $a.attr('data-view');
+  window.attachLinks = function() {
+    $('a[data-uri]').on('click', function(e) {
+      var $a = $(this),
+      url = $a.attr('data-uri'),
+      field = $a.attr('data-view');
 
     if (!field) { field = '#theContainer'; }
 
     var $elem = $(field);
 
     if (!url) { $elem.html('').load(url); }
-  });
+
+    e.preventDefault();
+    });
+  };
 
   $('#theContainer').html('').load('welcome.html');
+  attachLinks();
 
   // Add segments to a slider
   $.fn.addSliderSegments = function (amount, orientation) {    
     return this.each(function () {
       if (orientation === "vertical") {
         var output = ''
-          , i;
-        for (i = 1; i <= amount - 2; i++) {
-          output += '<div class="ui-slider-segment" style="top:' + 100 / (amount - 1) * i + '%;"></div>';
-        };
-        $(this).prepend(output);
+      , i;
+    for (i = 1; i <= amount - 2; i++) {
+      output += '<div class="ui-slider-segment" style="top:' + 100 / (amount - 1) * i + '%;"></div>';
+    };
+    $(this).prepend(output);
       } else {
         var segmentGap = 100 / (amount - 1) + "%"
-          , segment = '<div class="ui-slider-segment" style="margin-left: ' + segmentGap + ';"></div>';
-        $(this).prepend(segment.repeat(amount - 2));
+      , segment = '<div class="ui-slider-segment" style="margin-left: ' + segmentGap + ';"></div>';
+    $(this).prepend(segment.repeat(amount - 2));
       }
     });
   };
@@ -94,10 +99,10 @@ String.prototype.repeat = function(num) {
         range: true,
         slide: function(event, ui) {
           $slider3.find(".ui-slider-value:first")
-            .text("$" + ui.values[0] * slider3ValueMultiplier)
-            .end()
-            .find(".ui-slider-value:last")
-            .text("$" + ui.values[1] * slider3ValueMultiplier);
+        .text("$" + ui.values[0] * slider3ValueMultiplier)
+        .end()
+        .find(".ui-slider-value:last")
+        .text("$" + ui.values[1] * slider3ValueMultiplier);
         }
       });
 
@@ -150,12 +155,12 @@ String.prototype.repeat = function(num) {
       widgetEventPrefix: $.ui.spinner.prototype.widgetEventPrefix,
       _buttonHtml: function() { // Remove arrows on the buttons
         return "" +
-        "<a class='ui-spinner-button ui-spinner-up ui-corner-tr'>" +
-          "<span class='ui-icon " + this.options.icons.up + "'></span>" +
-        "</a>" +
-        "<a class='ui-spinner-button ui-spinner-down ui-corner-br'>" +
-          "<span class='ui-icon " + this.options.icons.down + "'></span>" +
-        "</a>";
+      "<a class='ui-spinner-button ui-spinner-up ui-corner-tr'>" +
+      "<span class='ui-icon " + this.options.icons.up + "'></span>" +
+      "</a>" +
+      "<a class='ui-spinner-button ui-spinner-down ui-corner-br'>" +
+      "<span class='ui-icon " + this.options.icons.down + "'></span>" +
+      "</a>";
       }
     });
 
@@ -185,13 +190,13 @@ String.prototype.repeat = function(num) {
     // Table: Add class row selected
     $('.table tbody :checkbox').on('check uncheck toggle', function (e) {
       var $this = $(this)
-        , check = $this.prop('checked')
-        , toggle = e.type == 'toggle'
-        , checkboxes = $('.table tbody :checkbox')
-        , checkAll = checkboxes.length == checkboxes.filter(':checked').length
+      , check = $this.prop('checked')
+      , toggle = e.type == 'toggle'
+      , checkboxes = $('.table tbody :checkbox')
+      , checkAll = checkboxes.length == checkboxes.filter(':checked').length
 
       $this.closest('tr')[check ? 'addClass' : 'removeClass']('selected-row');
-      if (toggle) $this.closest('.table').find('.toggle-all :checkbox').checkbox(checkAll ? 'check' : 'uncheck');
+    if (toggle) $this.closest('.table').find('.toggle-all :checkbox').checkbox(checkAll ? 'check' : 'uncheck');
     });
 
     // jQuery UI Datepicker

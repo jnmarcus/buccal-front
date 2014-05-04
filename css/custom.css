@@ -1,11 +1,20 @@
+body { overflow: hidden; }
+
 section.welcome {
   background-color: #edeff1;
-  padding-top: 50%;
-  padding-bottom: 50%;
+  padding-top: 30%;
+  padding-bottom: 30%;
 }
+
+section.welcome img.logo {
+  margin: 0rem auto;
+  height: 130px;
+}
+
 footer {
   height: 60px;
 }
+
 .border-box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -42,4 +51,107 @@ section.welcome .dialog {
 
 section.welcome .dialog .btn-primary {
   background-color: #097168;
+}
+
+.navbar-default {
+  padding: 1.5rem 4rem;
+}
+
+section.chat, section.conversations {
+  padding-top: 55px;
+  margin: 25% 0rem;
+}
+
+section.chat ul, section.conversations ul {
+  margin: 0rem;
+  padding: 0rem;
+}
+
+section.chat ul li,
+section.conversations ul li {
+  list-style: none;
+  margin: 0rem;
+  padding: 0rem;
+  width: 100%;
+  display: block;
+  height: 80px;
+  margin: 0.25rem 0rem;
+}
+
+section.conversations ul li {
+  height: 160px;
+  width: 40%;
+  display: block;
+  float: left;
+  margin: 5%;
+}
+
+section.conversations ul li a,
+section.chat ul li a {
+  display: inline-block;
+  height: 80px;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+section.conversations ul li a > img,
+section.conversations ul li a > div {
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+section.conversations ul li a > div {
+  margin: 0rem auto;
+  height: 30px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+section.conversations ul li a > img {
+  margin: 0rem auto;
+  width: 90%;
+  height: 130px;
+  border-radius: 80%;
+  background-color: #F4F070;
+  box-shadow: 0px 0px 20px #666;
+}
+
+section.chat ul li a > img {
+  width: 20%;
+  float: left;
+  margin: 10px 2.5%;
+  display: inline-block;
+  height: 60px;
+  border-radius: 40%;
+  line-height: 80px;
+}
+
+section.chat ul li a > div {
+  width: 70%;
+  margin: 0rem 2.5%;
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  height: 80px;
+  line-height: 80px;
+}
+
+section.chat ul li.me {
+  background-color: #097168;
+  color: #fff;
+}
+
+section.chat ul li.me a {
+  color: #fff;
+}
+
+section.chat ul li.me img { display: none; }
+section.chat ul li.me div { 
+  float: left;
+  width: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
 }
