@@ -34,3 +34,12 @@ footer {
 }
 
 nav, footer { display: none; }
+
+section.welcome,
+section.welcome .dialog {
+  background-color: #ACCECD;
+}
+
+section.welcome .dialog .btn-primary {
+  background-color: #097168;
+}
